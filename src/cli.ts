@@ -108,12 +108,12 @@ program
   }) => {
     showBanner({ opts });
 
-    let { models, updatedAt } = await fetchModels({ opts, forceUpdate: opts.update });
+    const { models: allModels, updatedAt } = await fetchModels({ opts, forceUpdate: opts.update });
+    let models = allModels;
 
     if (opts.provider) {
       models = filterByProvider({ models, provider: opts.provider });
       if (models.length === 0) {
-        const { models: allModels } = await fetchModels({ opts });
         const providers = getProviders({ models: allModels });
         console.log(`  ${pc.red('✖')} No models found for provider ${pc.bold(`"${opts.provider}"`)}.`);
         console.log('');
@@ -131,7 +131,6 @@ program
     if (search) {
       models = searchModels({ models, query: search });
       if (models.length === 0) {
-        const { models: allModels } = await fetchModels({ opts });
         const resolved = findModel({ models: allModels, query: search });
         console.log(formatSuggestions({ query: search, suggestions: resolved.suggestions }));
         process.exit(1);

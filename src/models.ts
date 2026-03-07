@@ -90,6 +90,24 @@ function similarity({ a, b }: { a: string; b: string }): number {
   return (2 * intersection) / (biA.size + biB.size);
 }
 
+function similarityWithBigrams({
+  biA,
+  b,
+}: {
+  biA: Set<string>;
+  b: string;
+}): number {
+  const biB = bigrams({ str: b.toLowerCase() });
+  if (biA.size === 0 && biB.size === 0) return 1;
+  if (biA.size === 0 || biB.size === 0) return 0;
+
+  let intersection = 0;
+  for (const bi of biA) {
+    if (biB.has(bi)) intersection++;
+  }
+  return (2 * intersection) / (biA.size + biB.size);
+}
+
 function findModel({
   models,
   query,
@@ -103,8 +121,8 @@ function findModel({
   const exact = models.find((m) => m.name.toLowerCase() === q);
   if (exact) return { model: exact, suggestions: [] };
 
-  // 2. Substring matches
-  const substring = models.filter((m) => m.name.toLowerCase().includes(q));
+  // 2. Substring matches (reuse searchModels)
+  const substring = searchModels({ models, query });
   if (substring.length === 1) return { model: substring[0], suggestions: [] };
   if (substring.length > 1 && substring.length <= 10) {
     return { model: null, suggestions: substring };
@@ -114,8 +132,12 @@ function findModel({
   }
 
   // 3. Fuzzy suggestions via bigram similarity
+  const queryBigrams = bigrams({ str: q });
   const scored = models
-    .map((m) => ({ model: m, score: similarity({ a: q, b: m.name }) }))
+    .map((m) => ({
+      model: m,
+      score: similarityWithBigrams({ biA: queryBigrams, b: m.name }),
+    }))
     .filter((s) => s.score > 0.1)
     .sort((a, b) => b.score - a.score)
     .slice(0, 5);

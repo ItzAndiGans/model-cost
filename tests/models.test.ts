@@ -130,7 +130,7 @@ describe('filterByProvider', () => {
     expect(filtered).toHaveLength(1);
   });
 
-  it('filters by exact provider name', () => {
+  it('filters by exact provider name for deepseek', () => {
     const filtered = filterByProvider({ models, provider: 'deepseek' });
     expect(filtered).toHaveLength(1);
     expect(filtered[0].name).toBe('deepseek-chat');
