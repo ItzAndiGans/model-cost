@@ -1,6 +1,6 @@
 {
   "name": "model-cost",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Compare LLM API pricing from your terminal. Supports 300+ models across all major providers.",
   "type": "module",
   "bin": {
